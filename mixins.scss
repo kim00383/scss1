@@ -1,0 +1,13 @@
+@mixin default-type {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+@mixin align-main {
+    display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	padding: 0 30px;
+	text-align: center;
+}

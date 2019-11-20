@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+@import 'mixins';
+$bg-color:  #FFEB3B;
+$color: #1E1E1E;
+$font-size-desktop: 30px;
+
+$font-size-tablet: 20px;
+$bg-color-tablet: #303F9F;
+$color-tablet: #FAFAFA;
+
+
+$font-size-mobile: 16px;
+$bg-color-mobile: #43A047;
+$color-mobile: #FAFAFA;
+
+$icon-color: #a83f39;
+
+%web-font{
+    font-family: 'Acme', sans-serif;
+    font-weight: 700;
+}
+
+html{
+    @extend %web-font;
+}
+
+body{
+    @include default-type;
+    background-color: $bg-color;
+    color: $color;
+}
+main {
+
+    @include align-main;
+    font-size: $font-size-mobile;
+}
+
+footer{
+    font-size: $font-size-tablet;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            
+    i{
+        color: $icon-color;
+    }
+}
+
+li{
+    list-style: none;
+    a{
+        text-decoration: none;
+
+        &:hover{
+            color: #303F9F;
+        }
+
+    }
+
+}
+@media only screen and (min-width: 600px){
+    body{
+        
+        background-color: $bg-color-mobile;
+        color: $color-mobile;
+    }
+    main{
+        font-size: $font-size-desktop;
+    }
+}
+
+@media only screen and (min-width:601px) and (max-width: 900px){
+    body{
+        background-color: $bg-color-tablet;
+        color: $color-tablet;
+    }
+    main{
+        font-size: $font-size-tablet;
+
+    }
+    li{
+        a{
+            color: wheat;
+    
+            &:hover{
+                color: red;
+            }
+        }
+    }
+ 
+}
